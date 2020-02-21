@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    config:
+      uri: http://localhost:8880
+      fail-fast: true
+      password: m@p2@2020
+      username: user

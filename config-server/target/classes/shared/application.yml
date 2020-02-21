@@ -1,0 +1,40 @@
+#This configuration file will hold common configs to be shared among all files
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/
+
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+default:
+  recipient: naoresponda@mapa.ma.gov.br
+  sender: naoresponda@mapa.ma.gov.br
+
+spring:
+  mail:
+    host: correio.ma.gov.br
+    password: M2p@2020
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: false
+          starttls:
+            enable: true
+            required: true
+    test-connection: true
+    username: naoresponda@mapa.ma.gov.br
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 20000

@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: registry #name of the application
+  cloud:
+    config:
+      uri: http://localhost:8880 #where the config-service is running
+      fail-fast: true #the service will not run if it can't reach the config-service
+      password: m@p2@2020 #password of the config-service
+      username: user #username of the config-service
+
+eureka:
+  instance:
+    prefer-ip-address: true #when the application registers with eureka, it uses its IP address rather than its hostname
+  client:
+    registerWithEureka: false #tells the built-in eureka client to not register itself with eureka, because we should act as a server
+    fetchRegistry: false

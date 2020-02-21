@@ -1,0 +1,7 @@
+server: 
+  port: 8010 #the default port used for eureka servers
+
+eureka: 
+  client: 
+    fetch-registry: false
+    register-with-eureka: false

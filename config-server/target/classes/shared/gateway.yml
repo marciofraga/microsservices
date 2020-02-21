@@ -1,0 +1,31 @@
+server:
+  servlet: 
+    context-path: /gateway
+  port: 8080
+
+eureka: 
+  client: 
+    fetch-registry: true
+    register-with-eureka: true
+
+jwt:
+  config:
+    login-url: /auth/login
+    type: signed
+
+zuul:
+  sensitive-headers: Cookie 
+#  ignoredServices: '*'
+  host: 
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+  routes:
+    auth: 
+      sensitiveHeaders:
+      path: /auth/** #path that will be intercepted
+      url: http://127.0.0.1:8081/auth #which url the request will be mapped to
+      serviceId: auth
+
+ribbon: 
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
